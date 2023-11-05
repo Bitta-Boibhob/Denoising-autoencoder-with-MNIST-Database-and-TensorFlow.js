@@ -1,8 +1,2 @@
 backup
-node_modules
-folder
-public
 app.js
-file1.js
-package-lock.json
-package.json

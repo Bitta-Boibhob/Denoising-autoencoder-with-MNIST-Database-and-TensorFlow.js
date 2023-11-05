@@ -76,7 +76,3 @@ const calculateMSE = (originalTensor, reconstructedTensor) => {
   const mse = tf.mean(squaredDifference).dataSync()[0];
   return (mse * 100).toFixed(2);
 };
-
-// Usage example:
-// const mse = calculateMSE(inputTensor, fixedTensor);
-// console.log('Mean Squared Error:', mse);
