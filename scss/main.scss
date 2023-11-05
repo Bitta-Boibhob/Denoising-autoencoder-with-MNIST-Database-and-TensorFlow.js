@@ -1,0 +1,53 @@
+body {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        font-size: 18px;
+    }
+    *,
+    div,
+    p {
+        font-family: Roboto;
+        font-size: 1.1rem;
+    }
+    display: flex;
+    justify-content: center;
+    .mainContainer {
+        margin: 32px;
+        .heading {
+            font-size: 2.5rem;
+            margin-bottom: 32px;
+        }
+        .subHeading {
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+        .imgTitle {
+            display: flex;
+            justify-content: space-around;
+            gap: 50px;
+            margin-bottom: 32px;
+            canvas {
+                width: 200px;
+                height: 200px;
+            }
+            p {
+                text-align: center;
+            }
+        }
+        .mseResult {
+            margin-bottom: 32px;
+        }
+        .buttons {
+            display: flex;
+            gap: 24px;
+            button {
+                padding: 8px;
+                cursor: pointer;
+            }
+        }
+    } //.mainContainer
+}

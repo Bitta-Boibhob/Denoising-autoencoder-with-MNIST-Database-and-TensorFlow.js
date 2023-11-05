@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Denoising Autoencoder with TensorFlow.js</title>
+    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    </head>
+
+    <body>
+        <div class="mainContainer">
+            <div class="heading">Denoising Autoencoder</div>
+            <div class="subHeading">
+                <p>Simple example developed with MNIST database using tensorflow.js</p>
+                <p>Course : Artificial Intelligence Lab</p>
+                <p>Group-no : 13 (1901019,1901032,1901050)</p>
+            </div>
+            <div class="imgTitle">
+                <div class="block">
+                    <canvas id="originalImg"></canvas>
+                    <p>Original</p>
+                </div>
+                <div class="block">
+                    <canvas id="noisyImg"></canvas>
+                    <p>With noise</p>
+                </div>
+                <div class="block">
+                    <canvas id="restoredImg"></canvas>
+                    <p>Reconstruction</p>
+                </div>
+            </div>
+            <p class="mseResult" id="mseResult">0</p>
+            <div class="buttons">
+                <button id="newDigit">Load new digit</button>
+                <button id="newNoise">Reapply noise</button>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body html {
+  font-size: 18px;
+}
+body *,
+body div,
+body p {
+  font-family: Roboto;
+  font-size: 1.1rem;
+}
+body .mainContainer {
+  margin: 32px;
+}
+body .mainContainer .heading {
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+}
+body .mainContainer .subHeading {
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+body .mainContainer .imgTitle {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  margin-bottom: 32px;
+}
+body .mainContainer .imgTitle canvas {
+  width: 200px;
+  height: 200px;
+}
+body .mainContainer .imgTitle p {
+  text-align: center;
+}
+body .mainContainer .mseResult {
+  margin-bottom: 32px;
+}
+body .mainContainer .buttons {
+  display: flex;
+  gap: 24px;
+}
+body .mainContainer .buttons button {
+  padding: 8px;
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */
