@@ -59,20 +59,21 @@ const updateFixedTensor = () => {
     fixedTensor.dispose();
   }
   fixedTensor = tf.tidy(() => {
-    return denoising_ae_model.predict(distortedTensor.expandDims()).squeeze();
+    const rawOutput = denoising_ae_model
+      .predict(distortedTensor.expandDims())
+      .squeeze();
+    const reshapedOutput = rawOutput.reshape([28, 28, 1]);
+    return reshapedOutput;
   });
   tf.browser.toPixels(fixedTensor, restoredImg);
 
-  mseResult.innerText =
-    "Mean squared error : " + calculateMSE(inputTensor, fixedTensor) + "%";
+  calculateMSE(inputTensor, fixedTensor);
 };
 
-const calculateMSE = (originalTensor, reconstructedTensor) => {
-  // Calculate the MSE between two tensors
-  const squaredDifference = tf.squaredDifference(
-    originalTensor,
-    reconstructedTensor
-  );
-  const mse = tf.mean(squaredDifference).dataSync()[0];
-  return (mse * 100).toFixed(2);
+const calculateMSE = (cleanData, reconstructedData) => {
+  const mseTensor = tf.losses.meanSquaredError(cleanData, reconstructedData);
+  mseTensor.data().then((mse) => {
+    mseResult.innerText =
+      "Mean squared error : " + (mse * 100).toFixed(3) + "%";
+  });
 };
